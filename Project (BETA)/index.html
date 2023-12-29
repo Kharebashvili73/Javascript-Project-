@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Version</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="showHomePage()">
+  <header>
+    <h1><a href="#" onclick="showHomePage()">SkyMovies</a></h1>
+    <div class="search-tab">
+      <input type="text" id="searchInput" placeholder="Search...">
+      <button onclick="searchMovies()">Search</button>
+    </div>
+  </header>
+
+  
+  <nav>
+    <a href="#" id="categories" onclick="showCategoriesPage()">Categories</a>
+    <a href="#" id="contact" onclick="showContactPage()">Contact</a>
+    <a href="#" id="registration" onclick="showRegistrationPage()">Registration</a>
+    <a href="#" id="authorization" onclick="showAuthorizationPage()">Authorization</a>
+  </nav>
+
+  <div id="content">
+  </div>
+  
+  <div id="categories-page" style="display: none;">
+    <h2>Categories</h2>
+    <div id="filter-container">
+      <label for="genre">Genre:</label>
+      <select id="genre" name="genre">
+        <option value="action">Action</option>
+        <option value="drama">Drama</option>
+       
+      </select>
+  
+      <label for="media-type">Media Type:</label>
+      <select id="media-type" name="media-type">
+        <option value="movie">Movie</option>
+        <option value="tv-series">TV Series</option>
+      </select>
+  
+      <button onclick="applyFilter()">Apply Filter</button>
+    </div>
+  
+    <div id="filtered-movies-container">
+     
+    </div>
+  </div>
+
+  
+
+  <div id="movieDetails" class="movie-details">
+    <h2 id="detailsTitle"></h2>
+    <p id="detailsCategory"></p>
+    <p id="detailsDescription"></p>
+    <p id="detailsActors"></p>
+    <p id="detailsDirector"></p>
+  </div>
+
+  
+
+  <div class="contact-page" style="display: none;">
+    <h2>Contact Us</h2>
+    <p>If you have any questions or suggestions, feel free to contact us:</p>
+    <ul>
+      <li>Email: <span style="color: #ffcc00;">o.xarebashvili@gmail.com</span></li>
+      <li>Phone: <span style="color: #ffcc00;">+955 571 329 966</span></li>
+    </ul>
+  </div>
+
+  
+
+  <div class="registration-form" style="display: none;">
+    <h2>Registration</h2>
+    <form id="registrationForm" onsubmit="return validateRegistration()">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      <br>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+      <br>
+      <label for="confirmPassword">Confirm Password:</label>
+      <input type="password" id="confirmPassword" name="confirmPassword" required>
+      <br>
+      <label for="registrationDate">Registration Date:</label>
+      <input type="text" id="registrationDate" name="registrationDate" value="" readonly>
+      <br>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+      <br>
+      <label for="country">Country:</label>
+      <input type="text" id="country" name="country" required>
+      <br>
+      <label for="city">City:</label>
+      <input type="text" id="city" name="city" required>
+      <br>
+      <label for="mobileNumber">Mobile Number:</label>
+      <input type="text" id="mobileNumber" name="mobileNumber" required>
+      <br>
+      <button type="submit">Register</button>
+    </form>
+  </div>
+
+
+  <div class="authorization-form">
+    <h2 class="form-title">Authorization</h2>
+    <form id="authorizationForm" onsubmit="return validateAuthorization()">
+      <label class="form-label" for="authEmail">Email:</label>
+      <input class="form-input" type="email" id="authEmail" name="authEmail" required>
+      <label class="form-label" for="authPassword">Password:</label>
+      <input class="form-input" type="password" id="authPassword" name="authPassword" required>
+      <button class="form-button" type="submit">Authorize</button>
+    </form>
+  </div>
+
+  <footer style="text-align: center; padding: 20px; background-color: #82bad6; color: #fff;">
+    <p>&copy; 2023 SkyMovies. All rights reserved.</p>
+  </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
